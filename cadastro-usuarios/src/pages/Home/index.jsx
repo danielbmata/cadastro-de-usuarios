@@ -1,20 +1,21 @@
+import { useEffect } from 'react'
 import './style.css'
 import Lixo from '../../assets/lixo.svg'
+import api from '../../services/api'
 
 function Home() {
 
-  const users = [{
-    id: 'ffs54ds54',
-    name: 'dan',
-    age: 26,
-    email: 'dan@email.com'
-  }, {
-    id: 'ffs4e54ds54',
-    name: 'Julio',
-    age: 20,
-    email: 'julio@email.com'
+  let users = []
 
-  }]
+  async function getUsers(){
+    users = await api.get('/usuarios');
+  };
+
+  useEffect(() => {
+    getUsers()
+  }, [])
+  
+
 
   return (
 
