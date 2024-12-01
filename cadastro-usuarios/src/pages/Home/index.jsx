@@ -22,7 +22,12 @@ function Home() {
       email: inputEmail.current.value,
     });
 
-    getUsers()
+    getUsers();
+  }
+
+  async function deleteUsers(id) {
+    await api.delete(`/usuarios/${id}`);
+    getUsers();
   }
 
   useEffect(() => {
@@ -53,7 +58,7 @@ function Home() {
             <p>
               Email: <span>{user.email}</span>{' '}
             </p>
-            <button>
+            <button onClick={() => deleteUsers(user.id)}>
               <img src={Lixo} alt="" />
             </button>
           </div>
