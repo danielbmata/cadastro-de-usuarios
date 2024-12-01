@@ -1,8 +1,14 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #1e1d2d;
+}
+
 .container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 100px;
+  padding-top: 45px;
 }
 
 h1 {
@@ -14,66 +20,155 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding: 30px;
+  gap: 33px;
+  padding: 33px;
   border-radius: 12px;
   background-color: #2e2d3e;
-  max-width: 51%;
-  width: 400px;
-  margin-bottom: 21px;
+  max-width: 90%;
+  width: 399px;
+  margin-bottom: 45px;
+}
 
-  & button {
-    border-radius: 30px;
-    background-color: #8b8ae1;
-    height: 39px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    color: #fff;
-    font-size: 15px;
-  }
+form button {
+  border-radius: 30px;
+  background-color: #8b8ae1;
+  height: 39px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+}
 
-  & button:hover {
-    opacity: 0.9;
-  }
+form button:hover {
+  opacity: 0.9;
+}
 
-  & input {
-    border: 0.9px solid #48456c;
-    border-radius: 33px;
-    height: 42px;
-    background-color: #363653;
-    color: #fff;
-    font-size: 15px;
-    padding-left: 9.9px;
-    outline: none;
-  }
+form input {
+  border: 0.9px solid #48456c;
+  border-radius: 33px;
+  height: 42px;
+  background-color: #363653;
+  color: #fff;
+  font-size: 15px;
+  padding-left: 9px;
+  outline: none;
+}
+
+.scroll-container {
+  max-height: 300px;
+  overflow-y: auto;
+  width: 90%;
+  max-width: 399px;
+  background-color: #2e2d3e;
+  border: 0.9px solid #48456c;
+  border-radius: 9px;
+  padding: 15px;
 }
 
 .card {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: #363653;
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 100%;
+  border-radius: 9px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.card p {
+  color: #fff;
+  font-weight: bold;
+}
+
+.card p span {
+  font-weight: normal;
+}
+
+.card button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.card button:hover {
+  opacity: 0.6;
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 9px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #8b8ae1;
+  border-radius: 9px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #7a79d8;
+}
+
+.scroll-container::-webkit-scrollbar-track {
   background-color: #2e2d3e;
-  margin: 9.9px;
-  padding: 9.9px;
-  width: 399px;
-  border-radius: 9.9px;
+  border-radius: 9px;
+}
 
-  & p {
-    color: #fff;
-    font-weight: bold;
-
-    & span {
-      font-weight: normal;
-    }
+@media (max-width: 768px) {
+  .container {
+    padding-top: 33px;
   }
 
-  & button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  form {
+    padding: 30px;
+    width: 90%;
+    gap: 30px;
   }
 
-  & button:hover {
-    opacity: 0.6;
+  .scroll-container {
+    max-height: 270px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 21px;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card p {
+    margin-bottom: 9px;
+  }
+
+  .card button {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  form {
+    gap: 15px;
+  }
+
+  .scroll-container {
+    max-height: 198px;
+    padding: 9px;
+  }
+
+  .card {
+    padding: 15px;
   }
 }

@@ -1,4 +1,4 @@
-// Conexão com o
+// Conexão com o backend
 import axios from 'axios';
 
 const api = axios.create({

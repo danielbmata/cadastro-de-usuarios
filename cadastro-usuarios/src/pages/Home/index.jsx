@@ -46,24 +46,27 @@ function Home() {
         </button>
       </form>
 
-      {users.map((user) => (
-        <div key={user.id} className="card">
-          <div>
-            <p>
-              Nome: <span>{user.name}</span>{' '}
-            </p>
-            <p>
-              Idade: <span>{user.age}</span>{' '}
-            </p>
-            <p>
-              Email: <span>{user.email}</span>{' '}
-            </p>
-            <button onClick={() => deleteUsers(user.id)}>
-              <img src={Lixo} alt="" />
-            </button>
+      {/* Contêiner para rolagem */}
+      <div className="scroll-container">
+        {users.map((user) => (
+          <div key={user.id} className="card">
+            <div>
+              <p>
+                Nome: <span>{user.name}</span>{' '}
+              </p>
+              <p>
+                Idade: <span>{user.age}</span>{' '}
+              </p>
+              <p>
+                Email: <span>{user.email}</span>{' '}
+              </p>
+              <button onClick={() => deleteUsers(user.id)}>
+                <img src={Lixo} alt="" />
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
